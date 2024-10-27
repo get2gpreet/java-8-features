@@ -1,0 +1,25 @@
+plugins {
+	id 'java'
+}
+
+group = 'com.tech.word'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
+	testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
